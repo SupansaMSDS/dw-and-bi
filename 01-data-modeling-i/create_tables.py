@@ -6,57 +6,89 @@ import psycopg2
 PostgresCursor = NewType("PostgresCursor", psycopg2.extensions.cursor)
 PostgresConn = NewType("PostgresConn", psycopg2.extensions.connection)
 
-table_drop_events = "DROP TABLE IF EXISTS events"
 table_drop_actors = "DROP TABLE IF EXISTS actors"
-table_drop_actors = "DROP TABLE IF EXISTS milestone"
+table_drop_repo = "DROP TABLE IF EXISTS repo"
+table_drop_payload = "DROP TABLE IF EXISTS payload"
+table_drop_org = "DROP TABLE IF EXISTS org"
+table_drop_events = "DROP TABLE IF EXISTS events"
 
 table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors (
-        id int,
-        login text,
-        PRIMARY KEY(id)
+        actor_id int,
+        actor_login varchar(100),
+        actor_display_login varchar(100),
+        actor_gravatar_id varchar(100),
+        actor_url varchar(255),
+        actor__avatar_url varchar(255),
+        PRIMARY KEY(actor_id)
+    )
+"""
+table_create_repo = """
+    CREATE TABLE IF NOT EXISTS repo (
+        repo_id int,
+        repo_name varchar(100),
+        repo_url varchar(255),
+        PRIMARY KEY(repo_id)
+    )
+"""
+table_create_payload = """
+    CREATE TABLE IF NOT EXISTS payload (
+        push_id BIGINT,
+        size int,
+        distinct_size int,
+        ref varchar(100),
+        head varchar(100),
+        before_code varchar(100),
+        commits varchar(255),
+        PRIMARY KEY(push_id)
+    )
+"""
+table_create_org = """
+    CREATE TABLE IF NOT EXISTS org (
+        org_id int,
+        org_login varchar(100),
+        org_gravatar_id varchar(100),
+        org_url varchar(255),
+        org_avatar_url varchar(255),
+        PRIMARY KEY(org_id)
     )
 """
 table_create_events = """
     CREATE TABLE IF NOT EXISTS events (
-        id text,
-        type text,
+        event_id BIGINT NOT NULL,
+        event_type varchar(100) NOT NULL,
         actor_id int,
-        PRIMARY KEY(id),
-        CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actors(id)
+        repo_id int,
+        paylaod_action varchar(100) NOT NULL, -- [None (is 'push'), 'start', 'created', 'published', 'closed']
+        payload_push_id BIGINT,
+        public boolean NOT NULL,
+        created_at varchar(100),
+        org_id int,
+        event_time timestamp NOT NULL,
+        PRIMARY KEY(event_id),
+        CONSTRAINT FK_actor FOREIGN KEY (actor_id) REFERENCES actors(actor_id),
+        CONSTRAINT FK_repo FOREIGN KEY (repo_id) REFERENCES repo(repo_id),
+        CONSTRAINT FK_payload FOREIGN KEY (payload_push_id) REFERENCES payload(push_id),
+        CONSTRAINT FK_org FOREIGN KEY (org_id) REFERENCES org(org_id)
     )
 """
-table_create_milestone = """
-    CREATE TABLE IF NOT EXISTS milestone (
-        id SERIAL PRIMARY KEY,
-        url text,
-        html_url text,
-        labels_url text,
-        node_id text,
-        number int,
-        title text,
-        description text,
-        creator_id int,
-        open_issues int,
-        closed_issues int,
-        state text,
-        created_at timestamp,
-        updated_at timestamp,
-        due_on timestamp,
-        closed_at timestamp,
-        FOREIGN KEY (creator_id) REFERENCES actors(id)
-    )
-"""
+
+
 
 create_table_queries = [
     table_create_actors,
+    table_create_repo,
+    table_create_payload,
+    table_create_org,
     table_create_events,
-    table_create_milestone
+
 ]
 drop_table_queries = [
-    table_drop_events,
     table_drop_actors,
-
+    table_drop_repo,
+    table_drop_payload,
+    table_drop_org,
+    table_drop_events,
 ]
 
 
