@@ -78,7 +78,63 @@ def process(cur, conn, filepath):
                 """
                 # print(insert_statement)
                 cur.execute(insert_statement)
+                
+  # Insert data into tables here (assuming payload has appropriate fields)
+                insert_statement = f"""
+                    INSERT INTO payload (
+                        push_id,
+                        size,
+                        distinct_size,
+                        ref,
+                        head,
+                        before_code,
+                        commits
+                    ) VALUES (
+                        '{each.get("payload", {}).get("push_id", "")}',
+                        {each.get("payload", {}).get("size", 0)},
+                        {each.get("payload", {}).get("distinct_size", 0)},
+                        '{each.get("payload", {}).get("ref", "")}',
+                        '{each.get("payload", {}).get("head", "")}',
+                        '{each.get("payload", {}).get("before_code", "")}',
+                        '{each.get("payload", {}).get("commits", "")}'
+                    )
+                    ON CONFLICT (push_id) DO NOTHING
+                """
+                cur.execute(insert_statement)
 
+                # Insert data into tables here
+                insert_statement = f"""
+                    INSERT INTO repo (
+                        repo_id,
+                        repo_name,
+                        repo_url
+                    ) VALUES (
+                        {each.get("repo", {}).get("id", "")},
+                        '{each.get("repo", {}).get("name", "")}',
+                        '{each.get("repo", {}).get("url", "")}'
+                    )
+                    ON CONFLICT (repo_id) DO NOTHING
+                """
+                cur.execute(insert_statement)
+
+                # Insert data into tables here
+                insert_statement = f"""
+                    INSERT INTO org (
+                        org_id,
+                        org_login,
+                        org_gravatar_id,
+                        org_url,
+                        org_avatar_url
+                    ) VALUES (
+                        {each.get("org", {}).get("id", "")},
+                        '{each.get("org", {}).get("login", "")}',
+                        '{each.get("org", {}).get("gravatar_id", "")}',
+                        '{each.get("org", {}).get("url", "")}',
+                        '{each.get("org", {}).get("avatar_url", "")}'
+                    )
+                    ON CONFLICT (org_id) DO NOTHING
+                """
+                cur.execute(insert_statement)
                 conn.commit()
 
 
