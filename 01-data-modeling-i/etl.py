@@ -60,8 +60,17 @@ def process(cur, conn, filepath):
                 insert_statement = f"""
                     INSERT INTO actors (
                         id,
-                        login
-                    ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}')
+                        login,
+                        display_login,
+                        gravatar_id,
+                        url,
+                        avatar_url,
+                    ) VALUES ({each["actor"]["id"]},
+                            '{each["actor"]["login"]}',
+                            '{each["actor"]["display_login"]}',
+                            '{each["actor"]["gravatar_id"]}',
+                            '{each["actor"]["url"]}',
+                            '{each["actor"]["avatar_url"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
@@ -72,8 +81,24 @@ def process(cur, conn, filepath):
                     INSERT INTO events (
                         id,
                         type,
-                        actor_id
-                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}')
+                        actor_id,
+                        repo_id,
+                        paylaod_action,
+                        payload_push_id,
+                        public,
+                        created_at,
+                        org_id ,
+                        event_time,
+                    ) VALUES ('{each["id"]}', 
+                            '{each["type"]}', 
+                            '{each["actor"]["id"]}', 
+                            '{each["repo"]["id"]}',
+                            '{each["paylaod_action"]}',
+                            '{each["payload_push_id"]}',
+                            '{each["public"]}',
+                            '{each["created_at"]}',
+                            '{each["org_id"]}',
+                            '{each["event_time"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
