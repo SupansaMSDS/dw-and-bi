@@ -6,3 +6,5 @@
 ### 2.docker compose up
 
 ### 3.python etl.py
+
+![Alt text](image.png)
