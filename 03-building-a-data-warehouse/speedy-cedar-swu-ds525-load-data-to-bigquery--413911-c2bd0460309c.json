@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "speedy-cedar-413911",
+  "private_key_id": "c2bd0460309cd14d9b85e82659a1d95a8e720708",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCnG9BqBgBnEPTo\nM29bmE3Nuh58ZVO2QC7rIOjowm93+uS1f+ERX8dAFv5aTY209iUyIeWxlsBKO3Q5\nf5W5f00jPIf4A8pLWCNcigXgunifcon/hYHQZN8yvp2vVCi6rpUMgQE9YiMCe8XV\nechQIatXXYRW3mtXFQgytYV/0Ulu2J0XThWeMvy56NP77Xya88aoXroyQ0thJ39/\n63cy2RuWK4gjrgW1a2nGjottZWyCziMAlHIIcD/KMskgQ+PwvBtrfmxVRS7ACCHK\nabrBCNoU8mq0H23+f8RG71Hgu7mM7qMm1Xa9+CVI01rlJsPJHDGpRRwEEn2FpVQw\nTvpoXZ5rAgMBAAECggEADUyRte5hAn1/UColFvVfCRwNKGSUA0bGX8tlsyh44I6P\nZxZp82JbpBvFsFVzDU94PwN4Q+g1yMfvLv2at9bhbQgjNgzEgQyJppK2zF9qvB3M\nd7vIogIfypUQTY91Z63/NK3g9balXKGRvrSLdD0fEBE5jVme0fZdiajtRUfYVUGM\n/2U+CSsYxvdVZOE6Nm/m+kU0Z4h5mDbW5LPu3LmuFNICQRcwQCk2Zr8g6mNo9Z+y\nKmyTyWBbvaILvWUt48Q6jM2ltFj82G36TceBrWlUer4iNkL5WgU5M1OnztPzBgnW\n4HvgiKk8ZeulbuL+yiJH4910ggVToJBTbpihKh1xqQKBgQDaAzu1nMxpBbC3tzWF\nar6sU2pwaLrmSwohxzV+D28yWCuxf3YG+f2HJ7L3S6Mw+cJd/rqAw+4ick8wXa51\n/Th91AGLBIazd69YqJ5lqxxfibdo87f4z5MhL6f8D14oG/GhE09SZk7wZvixrhf2\nzeIuO0sHDhNtk3T/2UNZVrouVwKBgQDEOe+Fd+FaMS3E25GkxzrXcJQ3XH4t6oYv\nfdYUEaKtQTOiMyBaYq5WEMT7/6WAgvGik+9ETUEXJJdvOw2vWUHUOCzukWru2jJ3\nC2v5gEDXVvW4ay/mBm97MTfE81OQAI//yUYOIWtXxcKcAIF1Nv1g5ILwfD8EqZCU\nyih8PI5cDQKBgHOibWQ54638x6vaMDgw0yvCHt26nw+RU7Fw4S2Y8Cjq3VoLOkYf\nCNtMMj+6zbcncnG6r5+mzMNWkCweNG/+vJz4+0yKPQwp+kZzQXi5lpYSDMdNJhKB\nvw9GILqwSAfMMpB2FoelHk+ivlw39BwDPem5p2T5kVJ4eQFPcsqLFruHAoGASaQA\netNhlCqOpalNQEywjXeneBtTE0JHd30/ISr5JRIqIX4UbzdHe+8xLe1kHBWIP15L\nVhO0EM5fspOz8BGMPeuTGTkjq13hwIFd1TXHn8j30G0Rfb7+iXoQFu7Gdm1vnSvZ\nCaaLFVaXUVpzOx0W/AzmAwBt2f8UznILvYwwVOUCgYAWi3PdJiRGKqkr4cZtlYaq\nh8ZFaFeRmZfeZyE9mApYTMsTvvvmjzDHQCmAlQ4S+7Ih/ZqStATqDHuJjCYxZaPH\nTR3se7rdq4UO14pChEGWKa88LZWr04Iv6wsjjtOuDgJXR8VTM64lDkucBpkGicoe\no/XpMHN3ojsXfnxuVvfX0A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "swu-ds525-load-data-to-bigquer@speedy-cedar-413911.iam.gserviceaccount.com",
+  "client_id": "103504517140037010636",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/swu-ds525-load-data-to-bigquer%40speedy-cedar-413911.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
