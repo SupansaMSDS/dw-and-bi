@@ -1,11 +1,22 @@
 # Building a Data Lake
+
 1.สร้าง Data set ชื่อ github บน bigquery
+
+
+
+
+
+
 ![Alt text](image-7.png)
 
 1.pip install -r requirements.txt
 ![Alt text](image-8.png)
 
 2.สร้าง service account บน bigquery และกำหนดสิทธิ์
+
+
+
+
 ![Alt text](image-1.png)
 
 .เข้าไป service account แล้วทำการ download key เลือก Key type เป็น JSON
