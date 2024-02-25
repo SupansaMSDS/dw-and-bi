@@ -19,7 +19,7 @@
 
 ![Alt text](image-1.png)
 
-.เข้าไป service account แล้วทำการ download key เลือก Key type เป็น JSON
+3.เข้าไป service account แล้วทำการ download key เลือก Key type เป็น JSON
 ![Alt text](image-3.png)
 
 ![Alt text](image-4.png)
