@@ -1,4 +1,4 @@
-# Building a Data Lake
+# Building a Data Warehouse
 
 1.สร้าง Data set ชื่อ github บน bigquery
 
