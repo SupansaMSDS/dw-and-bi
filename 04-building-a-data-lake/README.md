@@ -11,3 +11,4 @@ sudo chmod 777 .
 ```sh
 docker-compose up
 ```
+![Alt text](image.png)
