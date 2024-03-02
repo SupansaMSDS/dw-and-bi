@@ -11,4 +11,8 @@ sudo chmod 777 .
 ```sh
 docker-compose up
 ```
+จากนั้นเปิด Ports 8888 ขึ้นมา แล้วใส่ Token ในการ Login เข้า Jupyter notebook
+
+Run code ETL_Local.ipynb
+
 ![Alt text](image.png)
