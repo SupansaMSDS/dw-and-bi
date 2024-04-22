@@ -3,7 +3,7 @@
 ```bash
 python -m venv ENV
 source ENV/bin/activate
-pip install dbt-core dbt-postgres
+pip install -r requirements.txt
 ```
 
 ```bash
