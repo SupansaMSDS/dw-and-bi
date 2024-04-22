@@ -1,4 +1,3 @@
-
 ### 1. change directory to project 05-creating-and-scheduling-data-pipelines:
 ```sh
 cd 05-creating-and-scheduling-data-pipelines/
